@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qtg-jJ-seS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qtg-jJ-seS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Requests-->
@@ -233,7 +233,7 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="66n-m3-G4V" userLabel="Thrillist Detail View Controller" customClass="ThrillistDetailViewController" customModule="Facebook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="luf-yv-5Bk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1267"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1135"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" id="Fbh-VH-Twf">
@@ -259,28 +259,15 @@
                                             <action selector="LikeButton:" destination="66n-m3-G4V" eventType="touchUpInside" id="de9-an-dbf"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                            </scrollView>
-                            <view contentMode="scaleToFill" id="3dR-fw-I3d">
-                                <rect key="frame" x="0.0" y="520" width="320" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_bar" id="bBr-yU-Kax">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XU0-GW-Zvf" userLabel="Comment">
+                                        <rect key="frame" x="113" y="362" width="86" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="SJv-vI-ncu">
-                                        <rect key="frame" x="42" y="8" width="212" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zqe-ty-80Z">
-                                        <rect key="frame" x="262" y="8" width="50" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="CommentButton:" destination="66n-m3-G4V" eventType="touchUpInside" id="UmL-On-PFt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                            </view>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_back" id="xwX-Ic-rAd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -292,20 +279,48 @@
                                     <action selector="BackButtonAction:" destination="66n-m3-G4V" eventType="touchUpInside" id="hRz-P9-MmB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="3dR-fw-I3d">
+                                <rect key="frame" x="0.0" y="528" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_bar" id="bBr-yU-Kax">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="SJv-vI-ncu" userLabel="Comment Text Field">
+                                        <rect key="frame" x="42" y="8" width="212" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="XU0-GW-Zvf" id="L16-D1-poK"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zqe-ty-80Z">
+                                        <rect key="frame" x="262" y="8" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="E0m-8o-hNQ"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="1267"/>
                     <connections>
                         <outlet property="BackButton" destination="e3k-k2-nka" id="NYT-n2-KDw"/>
                         <outlet property="CommentBarParentView" destination="3dR-fw-I3d" id="1U2-9p-VNW"/>
+                        <outlet property="CommentTextField" destination="SJv-vI-ncu" id="CBk-NV-gHi"/>
                         <outlet property="ThrillistImageView" destination="kSG-Jo-mOU" id="cGK-Tw-LuH"/>
                         <outlet property="ThrillistScrollView" destination="Fbh-VH-Twf" id="Ls1-Gc-BBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1K-qg-BjD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hle-C2-sKK">
+                    <connections>
+                        <action selector="onTap:" destination="66n-m3-G4V" id="OC6-nF-3pt"/>
+                        <outlet property="delegate" destination="kSG-Jo-mOU" id="mBW-rW-bIF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="691" y="771.5"/>
         </scene>
