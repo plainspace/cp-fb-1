@@ -18,13 +18,28 @@ class ThrillistDetailViewController: UIViewController {
     
     @IBOutlet weak var CommentBarParentView: UIView!
     
+    @IBOutlet weak var CommentTextField: UITextField!
+    
     var initialY: CGFloat!
     var offset: CGFloat!
     
+    func keyboardWillShow(notification: NSNotification!) {
+        CommentBarParentView.frame.origin.y = initialY + offset
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        CommentBarParentView.frame.origin.y = initialY
+        
+    }
+    
     @IBAction func BackButtonAction(sender: AnyObject) {
-        // dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func CommentButton(sender: UIButton) {
+        self.CommentTextField.becomeFirstResponder()
     }
     
     @IBAction func LikeButton(sender: UIButton) {
@@ -36,6 +51,10 @@ class ThrillistDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func onTap(sender: AnyObject) {
+        print("test")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,21 +62,14 @@ class ThrillistDetailViewController: UIViewController {
         
         initialY = CommentBarParentView.frame.origin.y
         
-        offset = -50
+        offset = -300
         
-        func keyboardWillShow(notification: NSNotification!) {
-            
-        }
+        //        CommentBarParentView.frame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
-        func keyboardWillHide(notification: NSNotification!) {
-            
-        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self,selector: "keyboardWillShow:", name:UIKeyboardWillShowNotification, object:nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,selector: "keyboardWillHide:", name:UIKeyboardWillHideNotification, object:nil)
-        
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+
         // Do any additional setup after loading the view.
     }
 
